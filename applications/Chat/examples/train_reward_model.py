@@ -113,6 +113,7 @@ def train(args):
         train_dataset = RmStaticDataset(train_data, tokenizer, max_len)
         valid_dataset = RmStaticDataset(valid_data, tokenizer, max_len)
         eval_dataset = RmStaticDataset(eval_data, tokenizer, max_len)
+    elif args.dataset == 'Dahoas/filtered-SHP':
     elif args.dataset == 'Anthropic/hh-rlhf':
         train_dataset = HhRlhfDataset(train_data, tokenizer, max_len)
         valid_dataset = HhRlhfDataset(valid_data, tokenizer, max_len)

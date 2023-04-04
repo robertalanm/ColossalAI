@@ -37,7 +37,7 @@ def prepare_llama_tokenizer_and_embedding(
         smart_tokenizer_and_embedding_resize(
             special_tokens_dict=dict(pad_token=DEFAULT_PAD_TOKEN),
             tokenizer=tokenizer,
-            model=model,
+            model=model.model,
         )
 
     tokenizer.add_special_tokens({
