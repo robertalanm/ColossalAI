@@ -155,7 +155,7 @@ if __name__ == '__main__':
     parser.add_argument('--need_optim_ckpt', type=bool, default=False)
     parser.add_argument('--dataset',
                         type=str,
-                        choices=['Anthropic/hh-rlhf', 'Dahoas/rm-static'],
+                        choices=['Anthropic/hh-rlhf', 'Dahoas/rm-static', 'Dahoas/filtered-SHP'],
                         default='Dahoas/rm-static')
     parser.add_argument('--subset', type=str, default=None)
     parser.add_argument('--save_path', type=str, default='rm_ckpt')
