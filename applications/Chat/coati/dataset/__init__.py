@@ -4,6 +4,6 @@ from .sft_dataset import DataCollatorForSupervisedDataset, SFTDataset, Supervise
 from .utils import is_rank_0
 
 __all__ = [
-    'RmStaticDataset', 'HhRlhfDataset', 'is_rank_0', 'SFTDataset', 'SupervisedDataset',
+    'RmStaticDataset', 'HhRlhfDataset', 'SHPDataset', 'is_rank_0', 'SFTDataset', 'SupervisedDataset',
     'DataCollatorForSupervisedDataset', 'PromptDataset'
 ]
