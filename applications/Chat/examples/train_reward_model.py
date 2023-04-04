@@ -76,10 +76,10 @@ def train(args):
         raise ValueError(f'Unsupported model "{args.model}"')
     max_len = args.max_len
 
-    if args.model == 'llama':
-        tokenizer = prepare_llama_tokenizer_and_embedding(tokenizer, model)
-    else:
-        tokenizer.pad_token = tokenizer.eos_token
+    # if args.model == 'llama':
+    #     tokenizer = prepare_llama_tokenizer_and_embedding(tokenizer, model)
+    # else:
+    tokenizer.pad_token = tokenizer.eos_token
 
     # configure optimizer
     if args.strategy.startswith('colossalai'):
