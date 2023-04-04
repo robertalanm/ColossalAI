@@ -77,8 +77,7 @@ def train(args):
     max_len = args.max_len
 
     if args.model == 'llama':
-        tokenizer.add_special_tokens({'pad_token': '[PAD]'})
-        tokenizer.pad_token = tokenizer.eos_token
+        tokenizer = prepare_llama_tokenizer_and_embedding(tokenizer, model)
     else:
         tokenizer.pad_token = tokenizer.eos_token
 
