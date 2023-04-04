@@ -65,7 +65,7 @@ def smart_tokenizer_and_embedding_resize(
         if isinstance(model, LlamaLM):
             model = model.get_base_model()
 
-        model.resize_token_embeddings(len(tokenizer))
+        model.model.resize_token_embeddings(len(tokenizer))
 
         if num_new_tokens > 0:
             input_embeddings = model.get_input_embeddings().weight.data
