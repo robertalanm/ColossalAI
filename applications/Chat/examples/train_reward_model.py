@@ -3,7 +3,7 @@ from random import randint
 
 import loralib as lora
 import torch
-from coati.dataset import HhRlhfDataset, RmStaticDataset
+from coati.dataset import HhRlhfDataset, RmStaticDataset, SHPDataset
 from coati.models import LogExpLoss, LogSigLoss
 from coati.models.base import RewardModel
 from coati.models.bloom import BLOOMRM
@@ -114,6 +114,9 @@ def train(args):
         valid_dataset = RmStaticDataset(valid_data, tokenizer, max_len)
         eval_dataset = RmStaticDataset(eval_data, tokenizer, max_len)
     elif args.dataset == 'Dahoas/filtered-SHP':
+        train_dataset = SHPDataset(train_data, tokenizer, max_len)
+        valid_dataset = SHPDataset(valid_data, tokenizer, max_len)
+        eval_dataset = SHPDataset(eval_data, tokenizer, max_len)
     elif args.dataset == 'Anthropic/hh-rlhf':
         train_dataset = HhRlhfDataset(train_data, tokenizer, max_len)
         valid_dataset = HhRlhfDataset(valid_data, tokenizer, max_len)
