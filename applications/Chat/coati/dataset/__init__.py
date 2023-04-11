@@ -5,5 +5,5 @@ from .utils import is_rank_0
 
 __all__ = [
     'RmStaticDataset', 'HhRlhfDataset', 'SHPDataset', 'is_rank_0', 'SFTDataset', 'SupervisedDataset',
-    'DataCollatorForSupervisedDataset', 'PromptDataset'
+    'DataCollatorForSupervisedDataset', 'PromptDataset', 'GPT4Dataset'
 ]
