@@ -26,11 +26,11 @@ class LlamaRM(RewardModel):
                  lora_train_bias: str = 'none') -> None:
 
         if pretrained is not None:
-            model = LlamaForCausalLM.from_pretrained(pretrained)
+            model = LlamaModel.from_pretrained(pretrained)
         elif config is not None:
-            model = LlamaForCausalLM(config)
+            model = LlamaModel(config)
         else:
-            model = LlamaForCausalLM(LlamaConfig())
+            model = LlamaModel(LlamaConfig())
 
         if checkpoint:
             model.gradient_checkpointing_enable()
