@@ -1,5 +1,5 @@
 from .prompt_dataset import PromptDataset
-from .reward_dataset import HhRlhfDataset, RmStaticDataset, SHPDataset
+from .reward_dataset import HhRlhfDataset, RmStaticDataset, SHPDataset, GPT4Dataset
 from .sft_dataset import DataCollatorForSupervisedDataset, SFTDataset, SupervisedDataset
 from .utils import is_rank_0
 
