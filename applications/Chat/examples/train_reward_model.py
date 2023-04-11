@@ -3,7 +3,7 @@ from random import randint
 
 import loralib as lora
 import torch
-from coati.dataset import HhRlhfDataset, RmStaticDataset, SHPDataset
+from coati.dataset import HhRlhfDataset, RmStaticDataset, SHPDataset, GPT4Dataset
 from coati.models import LogExpLoss, LogSigLoss
 from coati.models.base import RewardModel
 from coati.models.bloom import BLOOMRM
@@ -121,6 +121,10 @@ def train(args):
         train_dataset = HhRlhfDataset(train_data, tokenizer, max_len)
         valid_dataset = HhRlhfDataset(valid_data, tokenizer, max_len)
         eval_dataset = HhRlhfDataset(eval_data, tokenizer, max_len)
+    elif args.dataset == 'robertmyers/prompting-rm-gpt4':
+        train_dataset = GPT4Dataset(train_data, tokenizer, max_len)
+        valid_dataset = GPT4Dataset(valid_data, tokenizer, max_len)
+        eval_dataset = GPT4Dataset(eval_data, tokenizer, max_len)
     else:
         raise ValueError(f'Unsupported dataset "{args.dataset}"')
 
